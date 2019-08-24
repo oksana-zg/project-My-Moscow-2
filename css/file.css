@@ -1,0 +1,768 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header/Шапка. Текст с фоновой картинкой Москвы */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper-top {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  height: 660px;
+}
+
+.wrapper-top-slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.slider-lenta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: inherit;
+  position: relative;
+}
+
+.slider-lenta-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider-lenta-item:nth-child(1) {
+  background: url(../photos/top.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(2) {
+  background: url(../photos/top1.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(3) {
+  background: url(../photos/top2.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(4) {
+  background: url(../photos/top3.jpg) center center/cover no-repeat;
+}
+
+.slider-arrow {
+  position: absolute;
+  width: 14%;
+  background-color: rgba(0, 0, 0, 0.05);
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.slider-arrow::before {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 42px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 50%;
+}
+
+.slider-arrow-left {
+  left: 0;
+}
+
+.slider-arrow-left::before {
+  border-left: 4px solid white;
+  border-bottom: 2px solid white;
+  right: 0;
+}
+
+.slider-arrow-right {
+  right: 0;
+}
+
+.slider-arrow-right::before {
+  border-right: 4px solid white;
+  border-top: 2px solid white;
+}
+
+/* Навигация меню. Шапка. продолжение... */
+.header-logo-nav {
+  position: relative;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.logo-1 {
+  background: url(../icon/spasskaya-tower.png) center center/contain no-repeat;
+  padding: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px;
+}
+
+.logo-2 {
+  font-size: 36px;
+  font-family: "MV Boli";
+  color: #ffdb47;
+}
+
+@media (max-width: 547px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    background: rgba(41, 6, 41, 0.911);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10px;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+  }
+}
+
+.nav a {
+  text-align: left;
+  font-size: 15px;
+  color: white;
+  margin: 15px;
+  position: relative;
+}
+
+@media (max-width: 547px) {
+  .nav a {
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffdb47;
+  }
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  background: white;
+  bottom: -1px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.nav a:hover::before {
+  width: 100%;
+}
+
+/* Превращение в крестик для мини-меню */
+.openMenu {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  margin: 24px 8px;
+  z-index: 999999999999999;
+  cursor: pointer;
+}
+
+.openMenu div {
+  border-top: 1px #ffdb47 solid;
+  width: 40px;
+}
+
+@media (max-width: 547px) {
+  .openMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.dash1 {
+  position: absolute;
+}
+
+.dash2 {
+  position: absolute;
+  top: 10px;
+}
+
+.dash3 {
+  position: absolute;
+  top: 20px;
+}
+
+/* Навигация меню. Шапка. продолжение... */
+.nav-center {
+  color: white;
+  min-height: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  right: 20%;
+  left: 20%;
+}
+
+.nav-center-1 div h1 {
+  text-align: center;
+  font-size: 59px;
+  line-height: calc(42px + 1vw);
+}
+
+.nav-center-1 div span {
+  text-align: center;
+  font-size: 28px;
+}
+
+.nav-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 98px;
+}
+
+.nav-button a {
+  background-color: #709dca;
+  padding: 20px 30px;
+  border: 2px solid #709dca;
+  color: white;
+  font-size: 17px;
+  border-radius: 6px;
+}
+
+/* services-block/Услуги. Что мы предлагаем */
+.bg {
+  background: white;
+}
+
+.mt-7 {
+  margin-top: 7vw;
+  margin-bottom: 5vw;
+}
+
+.sb-title {
+  color: #709dca;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 15px;
+}
+
+.sb-title-2 {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #394b50;
+  text-align: center;
+  margin-bottom: 3vw;
+  font-weight: 600;
+}
+
+.services-block {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.sb-block {
+  padding: 3vw;
+  width: 50%;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 400px;
+      flex-basis: 400px;
+}
+
+.sp-img {
+  padding: 25px;
+  margin: auto;
+}
+
+.sb-block-img1 {
+  background: url(../icon/map.png) center center/contain no-repeat;
+}
+
+.sb-block-img2 {
+  background: url(../icon/souvenir.png) center center/contain no-repeat;
+}
+
+.sb-block-img3 {
+  background: url(../icon/compass.png) center center/contain no-repeat;
+}
+
+.sb-block-img4 {
+  background: url(../icon/picture.png) center center/contain no-repeat;
+}
+
+.sb-block-img5 {
+  background: url(../icon/discussion.png) center center/contain no-repeat;
+}
+
+.sb-block-img6 {
+  background: url(../icon/sun.png) center center/contain no-repeat;
+}
+
+.sp-block-nav {
+  width: 85%;
+  min-width: 300px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: left;
+}
+
+.sp-block-nav a {
+  font-size: 16px;
+  font-family: "Myriad Pro";
+  color: #394b50;
+  text-transform: uppercase;
+  margin-left: 1vw;
+}
+
+.sp-block-nav p {
+  font-size: 13px;
+  font-family: "Myriad Pro";
+  color: #7b7b7b;
+  margin-right: 3vw;
+  margin-left: 1vw;
+}
+
+/* about Us/ Блок о нас: картинка, текст */
+.aboutUs-block {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.aboutUs-block-img {
+  background: url(../photos/group.jpg) center center/cover no-repeat;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+  min-height: 350px;
+}
+
+.aboutUs-block-nav {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 340px;
+      flex-basis: 340px;
+  padding: 4vw 6vw 13px 5vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  background: #ffc155;
+}
+
+.aboutUs-block-nav > * {
+  margin-bottom: 20px;
+}
+
+.aboutUs-block-nav h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.aboutUs-block-nav p {
+  font-size: 13px;
+  font-family: "Myriad Pro";
+}
+
+.aboutUs-block-button {
+  font-size: 14px;
+  font-family: "Myriad Pro";
+  color: white;
+  text-transform: uppercase;
+  background: #e7ad48;
+  padding: 18px 35px;
+  border: 1px solid #cb8d21;
+  border-radius: 2px;
+  line-height: 9vw;
+  white-space: nowrap;
+}
+
+/* Москва в фотографиях */
+.headline {
+  position: relative;
+}
+
+.headline::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5vw;
+  left: 0;
+  right: 0;
+  width: 240px;
+  height: 1px;
+  background: #ffc155;
+  margin: 0 auto;
+}
+
+.aboutUs-block-fotoTXT {
+  font-size: 17px;
+  color: rgba(6, 32, 51, 0.8);
+  text-align: center;
+  margin: 5vw 3vw 9vw 3vw;
+}
+
+.aUs-block-foto {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.options {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 220px;
+      flex-basis: 220px;
+  min-height: 220px;
+  min-width: 25%;
+}
+
+.aUs-block-foto1 {
+  background: url(../photos/4.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto2 {
+  background: url(../photos/3.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto3 {
+  background: url(../photos/2.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto4 {
+  background: url(../photos/1.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto5 {
+  background: url(../photos/8.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto6 {
+  background: url(../photos/7.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto7 {
+  background: url(../photos/6.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto8 {
+  background: url(../photos/5.jpg) center center/cover no-repeat;
+}
+
+/* Отзывы */
+.reviews {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  padding: 5vw 5vw 3vw 5vw;
+}
+
+.rb1 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 220px;
+      flex-basis: 220px;
+  margin: 0 1vw;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.rb1 span {
+  margin-left: 1vw;
+}
+
+.rb1-txt {
+  background: #f7f3f2;
+  padding: 1vw 1.5vw;
+}
+
+.rb2 {
+  margin-top: 1vw;
+}
+
+.rb-img1 {
+  background: url(../testimonials/test2.jpg) center center/contain no-repeat;
+}
+
+.rb-img2 {
+  background: url(../testimonials/test1.jpg) center center/contain no-repeat;
+}
+
+/* Напишите нам */
+.block6 {
+  background: #eef0f0;
+  margin-top: 7vw;
+}
+
+.form-block {
+  position: relative;
+  padding-top: 4vw;
+  margin-bottom: 7vw;
+}
+
+.form-block::after {
+  content: '';
+  position: absolute;
+  bottom: -2.5vw;
+  left: 0;
+  right: 0;
+  width: 240px;
+  height: 1px;
+  background: #ffc155;
+  margin: 0 auto;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 5vw;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.fb {
+  width: 50%;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 13px 13px 0 13px;
+}
+
+@media (max-width: 547px) {
+  .fb {
+    width: 100%;
+  }
+}
+
+[type="text"],
+[type="email"],
+[type="phone"] {
+  font-size: 18px;
+  font-family: "Myriad Pro";
+  color: rgba(42, 40, 79, 0.761);
+  border: 2px solid #ffc155;
+  padding: 0.4vw;
+  width: 100%;
+  margin-bottom: 0.9vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: white;
+  outline: none;
+}
+
+[type="submit"] {
+  font-size: 18px;
+  font-family: "Myriad Pro";
+  color: white;
+  border: 2px solid #ffc155;
+  padding: 0.4vw;
+  width: 100%;
+  margin-bottom: 0.9vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #273a43;
+  outline: none;
+}
+
+textarea {
+  font-size: 18px;
+  font-family: "Myriad Pro";
+  color: rgba(42, 40, 79, 0.761);
+  border: 2px solid #ffc155;
+  padding: 0.4vw;
+  width: 100%;
+  margin-bottom: 0.9vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: white;
+  outline: none;
+  height: 91%;
+  min-height: 73px;
+  resize: vertical;
+}
+
+.block7 {
+  background: #273a43;
+}
+
+.block-contacts {
+  padding: 1vw 0;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.block-contacts span {
+  color: #c4c4c4;
+}
+
+.block-contacts h2 {
+  margin-top: 2.5vw;
+  margin-bottom: 1.5vw;
+}
+
+.bc {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  color: white;
+  font-size: 13.5px;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  padding: 1vw 2vw 1vw 13px;
+}
+
+.bc-contacts {
+  padding-left: 5vw;
+}
+
+.bc-txt {
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+
+.logo-1 {
+  padding: 20px;
+}
+
+.logo-2 {
+  font-size: 24px;
+}
+
+.bc-img {
+  width: 18px;
+  height: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 6px 10px 4px 0;
+}
+
+.bc-img1 {
+  background: url(../icon/placeholder.png) center center/contain no-repeat;
+}
+
+.bc-img2 {
+  background: url(../icon/mail.png) center center/contain no-repeat;
+}
+
+.bc-img3 {
+  background: url(../icon/telephone.png) center center/contain no-repeat;
+}
+
+.bc-data {
+  color: #71b6d5;
+  margin-bottom: 1vw;
+}
+
+.block8 {
+  background: #172227;
+}
+
+.footer {
+  padding: 1vw;
+  font-size: 13.5px;
+  color: #c4c4c4;
+}
+
+.fh {
+  margin: 1vw 0;
+}
+
+.sc-img {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 0.1vw;
+}
+
+.sc-img1 {
+  background: url(../social/vk.png) center center/contain no-repeat;
+}
+
+.sc-img2 {
+  background: url(../social/facebook.png) center center/contain no-repeat;
+}
+
+.sc-img3 {
+  background: url(../social/instagram.png) center center/contain no-repeat;
+}
+/*# sourceMappingURL=file.css.map */

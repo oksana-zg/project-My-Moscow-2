@@ -1,0 +1,153 @@
+$color-main: rgb(255, 255, 255);
+$color-logo:  rgb(255, 219, 71);
+
+@mixin screen ($size) {
+    @if $size == medium {
+        @media (max-width: 547px) {@content};
+    }
+}
+
+
+/* header/Шапка. Текст с фоновой картинкой Москвы */
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper-top {
+    background: url(../photos/top.jpg) center center/cover no-repeat;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header {
+    box-sizing: border-box;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.logo-1 {
+    background: url(../icon/spasskaya-tower.png) center center/contain no-repeat;
+    padding: 32px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.logo-2 {
+    font-size: 36px;
+    font-family: "MV Boli";
+    color: $color-logo;
+}
+
+.nav {
+    @include screen (medium) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        background: rgba(41, 6, 41, 0.911);
+        flex-direction: column;
+        margin: 10px;
+        transition: 0.5s all;
+    }
+    a {
+        text-align: left;
+        font-size: 15px;
+        color: $color-main;
+        margin: 15px;
+        position: relative;
+        @include screen (medium) {
+            text-align: center;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: 600;
+            color:  rgb(255, 219, 71);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1.5px;
+            background: white;
+            bottom: -1px;
+            transition: 0.5s all;
+        }
+        &:hover::before {
+            width: 100%;
+        }
+    }
+}
+
+
+/* Превращение в крестик для мини-меню */
+
+.openMenu {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    margin: 24px 8px;
+    z-index: 999999999999999;
+    cursor: pointer;
+    div {
+        border-top: 1px  rgb(255, 219, 71) solid;
+        width: 40px;
+    }
+    @include screen (medium){
+        display: flex;
+    }
+}
+
+.dash1 {
+    position: absolute;
+}
+
+.dash2 {
+    position: absolute;
+    top: 10px;
+}
+
+.dash3 {
+    position: absolute;
+    top: 20px;
+}
+
+
+/* Навигация меню. Шапка. продолжение... */
+
+.nav-center {
+    color: $color-main;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-center-1 div {
+    h1 {
+    text-align: center;
+    font-size: 59px;
+    line-height: calc(42px + 1vw);
+    }
+    span {
+        text-align: center;
+        font-size: 28px;
+    }
+    h2 {
+        text-align: center;
+        font-size: 34px;
+    }
+}

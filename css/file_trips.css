@@ -1,0 +1,414 @@
+@charset "UTF-8";
+/* header/Шапка. Текст с фоновой картинкой Москвы */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper-top {
+  background: url(../photos/top.jpg) center center/cover no-repeat;
+  margin: 0 auto;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.logo-1 {
+  background: url(../icon/spasskaya-tower.png) center center/contain no-repeat;
+  padding: 32px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px;
+}
+
+.logo-2 {
+  font-size: 36px;
+  font-family: "MV Boli";
+  color: #ffdb47;
+}
+
+@media (max-width: 547px) {
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    background: rgba(41, 6, 41, 0.911);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10px;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
+  }
+}
+
+.nav a {
+  text-align: left;
+  font-size: 15px;
+  color: white;
+  margin: 15px;
+  position: relative;
+}
+
+@media (max-width: 547px) {
+  .nav a {
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffdb47;
+  }
+}
+
+.nav a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  background: white;
+  bottom: -1px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.nav a:hover::before {
+  width: 100%;
+}
+
+/* Превращение в крестик для мини-меню */
+.openMenu {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  margin: 24px 8px;
+  z-index: 999999999999999;
+  cursor: pointer;
+}
+
+.openMenu div {
+  border-top: 1px #ffdb47 solid;
+  width: 40px;
+}
+
+@media (max-width: 547px) {
+  .openMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.dash1 {
+  position: absolute;
+}
+
+.dash2 {
+  position: absolute;
+  top: 10px;
+}
+
+.dash3 {
+  position: absolute;
+  top: 20px;
+}
+
+/* Навигация меню. Шапка. продолжение... */
+.nav-center {
+  color: white;
+  min-height: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.nav-center-1 div h1 {
+  text-align: center;
+  font-size: 59px;
+  line-height: calc(42px + 1vw);
+}
+
+.nav-center-1 div span {
+  text-align: center;
+  font-size: 28px;
+}
+
+.nav-center-1 div h2 {
+  text-align: center;
+  font-size: 34px;
+}
+
+.block7 {
+  background: #273a43;
+}
+
+.block-contacts {
+  padding: 1vw 0;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.block-contacts span {
+  color: #c4c4c4;
+}
+
+.block-contacts h2 {
+  margin-top: 2.5vw;
+  margin-bottom: 1.5vw;
+}
+
+.bc {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  color: white;
+  font-size: 13.5px;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  padding: 1vw 2vw 1vw 13px;
+}
+
+.bc-contacts {
+  padding-left: 5vw;
+}
+
+.bc-txt {
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+}
+
+.logo-1 {
+  padding: 20px;
+}
+
+.logo-2 {
+  font-size: 24px;
+}
+
+.bc-img {
+  width: 18px;
+  height: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 6px 10px 4px 0;
+}
+
+.bc-img1 {
+  background: url(../icon/placeholder.png) center center/contain no-repeat;
+}
+
+.bc-img2 {
+  background: url(../icon/mail.png) center center/contain no-repeat;
+}
+
+.bc-img3 {
+  background: url(../icon/telephone.png) center center/contain no-repeat;
+}
+
+.bc-data {
+  color: #71b6d5;
+  margin-bottom: 1vw;
+}
+
+.block8 {
+  background: #172227;
+}
+
+.footer {
+  padding: 1vw;
+  font-size: 13.5px;
+  color: #c4c4c4;
+}
+
+.fh {
+  margin: 1vw 0;
+}
+
+.sc-img {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 0.1vw;
+}
+
+.sc-img1 {
+  background: url(../social/vk.png) center center/contain no-repeat;
+}
+
+.sc-img2 {
+  background: url(../social/facebook.png) center center/contain no-repeat;
+}
+
+.sc-img3 {
+  background: url(../social/instagram.png) center center/contain no-repeat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header/Шапка. Текст с фоновой картинкой */
+.wrapper-top {
+  background: url(../images/top1_1.jpg) center center/cover no-repeat;
+}
+
+/* tours-block/Услуги. ВЫБЕРИТЕ ТУР */
+.bg {
+  background: white;
+}
+
+.mt-7 {
+  margin-top: 7vw;
+  margin-bottom: 5vw;
+}
+
+.tour-name {
+  color: #709dca;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 15px;
+  margin-bottom: 5vw;
+}
+
+.tours {
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.tours:nth-child(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.tours:nth-child(2n) .tours-nav {
+  text-align: right;
+}
+
+.tours-img {
+  background: url(../photos/group.jpg) center center/cover no-repeat;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+  min-height: 350px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -ms-flex-preferred-size: 290px;
+      flex-basis: 290px;
+  min-width: 50%;
+}
+
+.tours-img1 {
+  background: url(../images/3_01.jpg) center center/cover no-repeat;
+}
+
+.tours-img2 {
+  background: url(../images/2_02.jpg) center center/cover no-repeat;
+}
+
+.tours-img3 {
+  background: url(../images/3_03.jpg) center center/cover no-repeat;
+}
+
+.tours-img4 {
+  background: url(../images/2_04.jpg) center center/cover no-repeat;
+}
+
+.tours-nav {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 4vw 3vw 13px 3vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  background: #ffc155;
+}
+
+.tours-nav > * {
+  margin-bottom: 15px;
+}
+
+.tours-nav h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.tours-nav p {
+  font-size: 13px;
+  font-family: "Myriad Pro";
+}
+
+.tours-nav div {
+  font-size: 20px;
+}
+
+.tours-button {
+  font-size: 14px;
+  font-family: "Myriad Pro";
+  color: white;
+  text-transform: uppercase;
+  background: #e7ad48;
+  padding: 15px 35px;
+  border: 1px solid #cb8d21;
+  border-radius: 2px;
+  line-height: 9vw;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=file_trips.css.map */

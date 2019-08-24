@@ -1,0 +1,682 @@
+$color-main: rgb(255, 255, 255);
+$color-frame: rgb(255, 193, 85);
+$color-logo:  rgb(255, 219, 71);
+$font2: "Myriad Pro";
+
+@mixin screen ($size) {
+    @if $size == medium {
+        @media (max-width: 547px) {@content};
+    }
+}
+
+@mixin after() {
+    position: relative;
+    &::after {   
+        content: '';
+        position: absolute;
+        bottom: -2.5vw;
+        left: 0;
+        right: 0;
+        width: 240px;
+        height: 1px;
+        background: $color-frame;
+        margin: 0 auto;
+    }  
+}
+
+@mixin initial-mg5() {
+    align-items: initial;
+    margin-top: 5vw;
+    
+}
+
+@mixin form($color, $background) {
+    font-size: 18px;
+    font-family: $font2;
+    color: $color;
+    border: 2px solid $color-frame;
+    padding: 0.4vw;
+    width: 100%;
+    margin-bottom: 0.9vw;
+    box-sizing: border-box;
+    background: $background;
+    outline: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Roboto";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* header/Шапка. Текст с фоновой картинкой Москвы */
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper-top {
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    height: 660px;
+}
+
+
+// слайдер- лента
+
+.wrapper-top-slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.slider-lenta {
+    display: flex;
+    height: inherit;
+    position: relative;
+}
+
+.slider-lenta-item {
+    width: 100%;
+    display: flex;
+}
+
+.slider-lenta-item:nth-child(1) {
+    background: url(../photos/top.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(2) {
+    background: url(../photos/top1.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(3) {
+    background: url(../photos/top2.jpg) center center/cover no-repeat;
+}
+
+.slider-lenta-item:nth-child(4) {
+    background: url(../photos/top3.jpg) center center/cover no-repeat;
+}
+
+.slider-arrow {
+    position: absolute;
+    width: 14%;
+    background-color: rgba(0, 0, 0, 0.05);
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.slider-arrow::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 42px;
+    transform: rotate(45deg);
+    bottom: 50%;
+}
+
+.slider-arrow-left {
+    left: 0;
+}
+
+.slider-arrow-left::before {
+    border-left: 4px solid white;
+    border-bottom: 2px solid white;
+    right: 0;
+}
+
+.slider-arrow-right {
+    right: 0;
+}
+
+.slider-arrow-right::before {
+    border-right: 4px solid white;
+    border-top: 2px solid white;
+}
+
+
+/* Навигация меню. Шапка. продолжение... */
+
+.header-logo-nav {
+    position: relative;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header {
+    box-sizing: border-box;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.logo-1 {
+    background: url(../icon/spasskaya-tower.png) center center/contain no-repeat;
+    padding: 32px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.logo-2 {
+    font-size: 36px;
+    font-family: "MV Boli";
+    color: $color-logo;
+}
+
+.nav {
+    @include screen (medium) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        background: rgba(41, 6, 41, 0.911);
+        flex-direction: column;
+        margin: 10px;
+        transition: 0.5s all;
+    }
+    a {
+        text-align: left;
+        font-size: 15px;
+        color: $color-main;
+        margin: 15px;
+        position: relative;
+        @include screen (medium) {
+            text-align: center;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: 600;
+            color:  rgb(255, 219, 71);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1.5px;
+            background: white;
+            bottom: -1px;
+            transition: 0.5s all;
+        }
+        &:hover::before {
+            width: 100%;
+        }
+    }
+}
+
+
+/* Превращение в крестик для мини-меню */
+
+.openMenu {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    margin: 24px 8px;
+    z-index: 999999999999999;
+    cursor: pointer;
+    div {
+        border-top: 1px  rgb(255, 219, 71) solid;
+        width: 40px;
+    }
+    @include screen (medium){
+        display: flex;
+    }
+}
+
+.dash1 {
+    position: absolute;
+}
+
+.dash2 {
+    position: absolute;
+    top: 10px;
+}
+
+.dash3 {
+    position: absolute;
+    top: 20px;
+}
+
+
+/* Навигация меню. Шапка. продолжение... */
+
+.nav-center {
+    color: $color-main;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 20%;
+    left: 20%;
+}
+
+.nav-center-1 div {
+    h1 {
+    text-align: center;
+    font-size: 59px;
+    line-height: calc(42px + 1vw);
+    }
+    span {
+        text-align: center;
+        font-size: 28px;
+    }
+}
+
+.nav-button {
+   justify-content: center;
+   margin-top: 98px;
+   a {
+        background-color: rgb(112, 157, 202);
+        padding: 20px 30px;
+        border: 2px solid rgb(112, 157, 202);
+        color: $color-main;
+        font-size: 17px;
+        border-radius: 6px;
+    }
+}
+
+
+/* services-block/Услуги. Что мы предлагаем */
+
+.bg {
+    background: $color-main;
+}
+
+.mt-7 {
+    margin-top: 7vw;
+    margin-bottom: 5vw;
+}
+
+.sb-title { 
+    color: rgb(112, 157, 202);
+    font-size: 26px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 15px;
+}
+
+.sb-title-2 {
+    margin-top: 15px;
+    font-size: 16px;
+    color: rgb(57, 75, 80);
+    text-align: center;
+    margin-bottom: 3vw;
+    font-weight: 600;
+}
+
+.services-block {
+    align-items: initial;
+}
+
+.sb-block {
+    padding: 3vw;
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    align-items: initial;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 400px;
+}
+
+.sp-img {
+    padding: 25px;
+    margin: auto;
+}
+
+.sb-block-img1 {
+    background: url(../icon/map.png) center center/contain no-repeat; 
+}
+
+.sb-block-img2 {
+    background: url(../icon/souvenir.png) center center/contain no-repeat; 
+}
+
+.sb-block-img3 {
+    background: url(../icon/compass.png) center center/contain no-repeat; 
+}
+
+.sb-block-img4 {
+    background: url(../icon/picture.png) center center/contain no-repeat; 
+}
+
+.sb-block-img5 {
+    background: url(../icon/discussion.png) center center/contain no-repeat; 
+}
+
+.sb-block-img6 {
+    background: url(../icon/sun.png) center center/contain no-repeat; 
+}
+
+.sp-block-nav {
+    width: 85%;
+    min-width: 300px;
+    box-sizing: border-box;
+    text-align: left;
+    a {
+        font-size: 16px;
+        font-family: $font2;
+        color: rgb(57, 75, 80);
+        text-transform: uppercase;
+        margin-left: 1vw;
+    }
+    p {
+        font-size: 13px;
+        font-family: $font2;
+        color: rgb(123, 123, 123);
+        margin-right: 3vw;
+        margin-left: 1vw;
+    }
+
+}
+
+
+/* about Us/ Блок о нас: картинка, текст */
+
+.aboutUs-block {
+    align-items: initial;
+}
+
+.aboutUs-block-img {
+    background: url(../photos/group.jpg) center center/cover no-repeat; 
+    flex-grow: 1;
+    flex-basis: 300px;
+    min-height: 350px;
+}
+
+.aboutUs-block-nav {
+    flex-grow: 1;
+    flex-basis: 340px;
+    padding: 4vw 6vw 13px 5vw;
+    box-sizing: border-box;
+    color: $color-main;
+    background: $color-frame;
+    > * {
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 26px;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 13px;
+        font-family: $font2;
+    }
+}
+
+.aboutUs-block-button {
+    font-size: 14px;
+    font-family: $font2;
+    color: $color-main;
+    text-transform: uppercase;
+    background: rgb(231, 173, 72);
+    padding: 18px 35px;
+    border: 1px solid rgb(203, 141, 33);
+    border-radius: 2px;
+    line-height: 9vw;
+    white-space: nowrap;
+}
+
+  
+/* Москва в фотографиях */
+
+.headline {
+   @include after();
+}
+
+.aboutUs-block-fotoTXT {
+    font-size: 17px;
+    color: rgba(6, 32, 51, 0.8);
+    text-align: center;
+    margin: 5vw 3vw 9vw 3vw;
+}
+
+.aUs-block-foto {
+    align-items: initial;
+}
+
+.options {
+    flex-grow: 1;
+    flex-basis: 220px;
+    min-height: 220px;
+    min-width: 25%;
+}
+ 
+.aUs-block-foto1 {
+    background: url(../photos/4.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto2 {
+    background: url(../photos/3.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto3 {
+    background: url(../photos/2.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto4 {
+    background: url(../photos/1.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto5 {
+    background: url(../photos/8.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto6 {
+    background: url(../photos/7.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto7 {
+    background: url(../photos/6.jpg) center center/cover no-repeat;
+}
+
+.aUs-block-foto8 {
+    background: url(../photos/5.jpg) center center/cover no-repeat;
+}
+
+
+/* Отзывы */
+
+.reviews {
+    align-items: initial;
+    padding: 5vw 5vw 3vw 5vw;
+}
+
+.rb1 {
+    flex-grow: 1;
+    flex-basis: 220px;
+    margin: 0 1vw;
+    align-items: initial;
+    span {
+        margin-left: 1vw;
+    }
+}
+
+.rb1-txt {
+    background: rgb(247, 243, 242);
+    padding: 1vw 1.5vw;
+}
+
+.rb2 {
+    margin-top: 1vw;
+}
+
+.rb-img1 {
+    background: url(../testimonials/test2.jpg) center center/contain no-repeat; 
+}
+
+.rb-img2 {
+    background: url(../testimonials/test1.jpg) center center/contain no-repeat; 
+}
+
+
+/* Напишите нам */
+
+.block6 {
+    background: rgb(238, 240, 240);
+    margin-top: 7vw;
+}
+
+.form-block {
+    @include after();
+    padding-top: 4vw;
+    margin-bottom: 7vw;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 5vw;
+    align-items: initial;
+}
+
+.fb {
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 13px 13px 0 13px;
+    @include screen (medium) {
+        width: 100%;
+    }
+}
+
+[type="text"],
+[type="email"],
+[type="phone"] {
+    @include form(rgba(42, 40, 79, 0.761), $color-main);
+}
+
+[type="submit"] {
+    @include form($color-main, rgb(39, 58, 67));
+}
+
+textarea {
+    @include form(rgba(42, 40, 79, 0.761), $color-main);
+    height: 91%;
+    min-height: 73px;
+    resize: vertical;
+}
+
+
+// Футер/контакты
+
+.block7 {
+    background: rgb(39, 58, 67); 
+}
+
+.block-contacts {
+    padding: 1vw 0;
+    align-items: initial;
+    span {
+        color: rgb(196, 196, 196)
+    }
+    h2 {
+        margin-top: 2.5vw;
+        margin-bottom: 1.5vw;
+    }
+}
+
+.bc {
+    flex-grow: 3;
+    flex-basis: 200px;
+    color: rgb(255, 255, 255);
+    font-size: 13.5px;
+    align-items: initial;
+    padding: 1vw 2vw 1vw 13px;
+}
+
+.bc-contacts {
+    padding-left: 5vw;
+}
+
+.bc-txt {
+    justify-content: initial;
+}
+
+.logo-1 {
+    padding: 20px;
+}
+
+.logo-2 {
+font-size: 24px;
+}
+
+.bc-img {
+    width: 18px;
+    height: 16px;
+    box-sizing: border-box;
+    margin: 6px 10px 4px 0;
+}
+
+.bc-img1 {
+    background: url(../icon/placeholder.png) center center/contain no-repeat;
+}
+
+.bc-img2 {
+    background: url(../icon/mail.png) center center/contain no-repeat;
+}
+
+.bc-img3 {
+    background: url(../icon/telephone.png) center center/contain no-repeat;
+}
+
+.bc-data {
+    color: rgb(113, 182, 213);
+    margin-bottom: 1vw;
+}
+
+
+// Футер/подпись
+
+.block8 {
+    background: rgb(23, 34, 39);
+}
+
+.footer {
+    padding: 1vw;
+    font-size: 13.5px;
+    color: rgb(196, 196, 196);
+}
+
+.fh {
+    margin: 1vw 0;
+}
+
+.sc-img {
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0 0.1vw;
+}
+
+.sc-img1 {
+    background: url(../social/vk.png) center center/contain no-repeat;
+}
+
+.sc-img2 {
+    background: url(../social/facebook.png) center center/contain no-repeat;
+}
+
+.sc-img3 {
+    background: url(../social/instagram.png) center center/contain no-repeat;
+}
